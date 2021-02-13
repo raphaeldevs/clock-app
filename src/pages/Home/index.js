@@ -1,7 +1,13 @@
-import React from 'react';
+import React from 'react'
+
+import { Container } from './styles'
 
 function Home() {
-  return <h1>Hello, you're in Home page! 😎</h1>;
+  return (
+    <Container>
+      <h1>Hello!</h1>
+    </Container>
+  )
 }
 
-export default Home;
+export default Home
