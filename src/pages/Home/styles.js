@@ -1,11 +1,5 @@
 import styled from 'styled-components'
 
-export const IconStyles = {
-	width: "6rem",
-	height: "6rem",
-	color: "#FFFFFF"
-}
-
 export const Container = styled.div`
 	width: 100vw;
 	height: 100vh;
@@ -29,39 +23,6 @@ export const Container = styled.div`
 
 		display: flex;		
   }
-`
-
-export const Quote = styled.section`
-	flex-direction: column;
-
-	q {
-		font-size: 2rem;
-
-		text-align: justify;
-	}
-
-	h3 {
-		margin-top: 3.5rem;
-
-		font-size: 2.3rem;
-		font-weight: 600;
-	}
-`
-
-export const Climate = styled.section`
-	justify-content: flex-end;
-	align-items: flex-start;
-
-	opacity: 0.3;	
-
-	strong {
-		margin-left: 2rem;
-
-		font-size: 6rem;
-		font-weight: 500;
-
-		line-height: 100%;
-	}
 `
 
 export const Days = styled.section`
