@@ -5,8 +5,9 @@ import { FiInfo } from 'react-icons/fi'
 import Quote from '../../components/Quote'
 import Climate from '../../components/Climate'
 import HelloMessage from '../../components/HelloMessage'
+import Time from '../../components/Time'
 
-import { Container, Days, Time, Main, Info } from './styles'
+import { Container, Days, Main, Info } from './styles'
 
 function Home() {
   return (
@@ -18,7 +19,7 @@ function Home() {
       <Main>
         <HelloMessage />
 
-        <Time>11:37</Time>
+        <Time />
 
         <Info>
           <FiInfo size="2.2rem" />

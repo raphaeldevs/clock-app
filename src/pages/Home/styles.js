@@ -71,11 +71,6 @@ export const HelloMessage = styled.p`
 	}
 `
 
-export const Time = styled.time`
-	font-size: 15rem;
-	font-weight: 700;
-`
-
 export const Info = styled.p`
 	display: flex;
 	align-items: center;
