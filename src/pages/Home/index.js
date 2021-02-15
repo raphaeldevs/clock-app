@@ -7,6 +7,8 @@ import Climate from '../../components/Climate'
 import HelloMessage from '../../components/HelloMessage'
 import Time from '../../components/Time'
 
+import { getYearDay } from '../../utils'
+
 import { Container, Days, Main, Info } from './styles'
 
 function Home() {
@@ -28,7 +30,7 @@ function Home() {
       </Main>
 
       <Days>
-        <span>Day</span> <strong>237</strong>
+        <span>Day</span> <strong>{getYearDay()}</strong>
       </Days>
     </Container>
   )
