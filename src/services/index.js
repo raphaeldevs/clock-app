@@ -1,13 +1,23 @@
+import { getGeographicCoordinates } from '../utils'
+
 export async function getClimate() {
-	const { REACT_APP_OWM_API_KEY } = process.env
-	
-	const apiRequest = await fetch(`http://api.openweathermap.org/data/2.5/weather?id=3388368&units=metric&appid=${REACT_APP_OWM_API_KEY}`)
-	const apiResponse = await apiRequest.json()
+  const { REACT_APP_OWM_API_KEY: API_KEY } = process.env
 
-	const { main: { temp }, weather: [{ icon }] } = apiResponse
+  const { latitude, longitude } = await getGeographicCoordinates()
 
-	return { 
-		temperature: temp, 
-		iconCode: icon.replace(/[^0-9]/g, '')
-	}
+  const apiRequest = await fetch(
+    `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`
+  )
+
+  const apiResponse = await apiRequest.json()
+
+  const {
+    main: { temp },
+    weather: [{ icon }]
+  } = apiResponse
+
+  return {
+    temperature: temp,
+    iconCode: icon.replace(/[^0-9]/g, '')
+  }
 }
