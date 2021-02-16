@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 
-export const IconStyles = {
-	width: "6rem",
-	height: "6rem",
-	color: "#FFFFFF"
-}
+export const Icon = styled.span`
+	svg {
+		width: 6rem;
+		height: 6rem;
+		color: #FFFFFF;
+	}
+`	
 
 export const Container = styled.section`
 	justify-content: flex-end;

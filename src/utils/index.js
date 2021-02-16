@@ -17,3 +17,20 @@ export function getYearDay() {
 
 	return dayOfYear
 }
+
+export function getTimeOfDay(onlyDayOrNight) {
+  const { hours } = getTime()
+
+  const timeSwitch = () => {
+    if (hours >= 5 && hours < 12) return 'morning'
+    if (hours >= 12 && hours < 18) return 'afternoon'
+    if (hours >= 18 || hours < 5) return 'night'
+  }
+
+	const dayOrNight = () => {
+		if (hours >= 5 && hours < 18) return 'day'
+    if (hours >= 18 || hours < 5) return 'night'
+	}
+
+  return onlyDayOrNight ? dayOrNight() : timeSwitch()
+}
