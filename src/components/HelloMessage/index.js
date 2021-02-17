@@ -5,21 +5,19 @@ import { getTimeOfDay } from '../../utils'
 import { Container, Icon } from './styles'
 
 export default function HelloMessage() {
-	function TimeOfDayIcon() {
-		const icons = {
-			'day': <FiSun />,
-			'night': <FiMoon />
-		}
+  function TimeOfDayIcon() {
+    const icons = {
+      day: <FiSun />,
+      night: <FiMoon />
+    }
 
-		return <Icon>
-			{ icons[getTimeOfDay(true)] }
-		</Icon>
-	}
+    return <Icon> { icons[getTimeOfDay(true)] } </Icon>
+  }
 
-	return (
-  	<Container>
-			<TimeOfDayIcon />
+  return (
+    <Container>
+      <TimeOfDayIcon />
       good { getTimeOfDay() }, raphael devs
-  	</Container>
-	)
+    </Container>
+  )
 }

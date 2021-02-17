@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { FiInfo } from 'react-icons/fi'
 
 import Quote from '../../components/Quote'
@@ -14,8 +12,8 @@ import { Container, Days, Main, Info } from './styles'
 function Home() {
   return (
     <Container>
-    	<Quote />
-    	
+      <Quote />
+
       <Climate />
 
       <Main>
