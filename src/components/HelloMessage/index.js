@@ -1,12 +1,25 @@
-import { FiSun } from 'react-icons/fi'
+import { FiSun, FiMoon } from 'react-icons/fi'
 
-import { Container, IconStyles } from './styles'
+import { getTimeOfDay } from '../../utils'
+
+import { Container, Icon } from './styles'
 
 export default function HelloMessage() {
+	function TimeOfDayIcon() {
+		const icons = {
+			'day': <FiSun />,
+			'night': <FiMoon />
+		}
+
+		return <Icon>
+			{ icons[getTimeOfDay(true)] }
+		</Icon>
+	}
+
 	return (
   	<Container>
-  		<FiSun style={IconStyles} />
-      good morning, raphael devs
+			<TimeOfDayIcon />
+      good { getTimeOfDay() }, raphael devs
   	</Container>
 	)
 }
