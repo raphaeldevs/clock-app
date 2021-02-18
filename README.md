@@ -22,7 +22,7 @@ e me baseei nele para fazer a minha versão.
 - [x] Exibir mensagem dinâmica com base na hora do dia
 - [x] Exibir dia do ano
 - [x] Exibir clima
-- [ ] Buscar imagens aleatórias do Unsplash e exibir pequena descrição
+- [x] Buscar imagens aleatórias do Unsplash e exibir pequena descrição
 - [ ] Exibir uma frase aleatória
 
 ### 👨‍💻 Tasks técnicas
@@ -43,9 +43,10 @@ e me baseei nele para fazer a minha versão.
   - [x] Fazer requisição e recuperar temperatura e código do ícone
   - [x] Exibir ícones dinâmicos com base no clima e hora do dia
     - [x] Criar componente switch para os ícones
-- [ ] Buscar imagens aleatórias usando API do Unsplash e uma descrição da imagem
-  - Fazer requisição no useEffect e recuperar valor para um state
-  - Passar URL da imagem via props para componente principal
-  - Recuperar URL no Styled Compoents e colocar no `background: url()`
-  - Exibir descrição da imagem
+- [x] Buscar imagens aleatórias usando API do Unsplash e uma descrição da imagem
+  - [x] Fazer requisição no useEffect e recuperar valor para um state
+  - [x] Passar URL da imagem via props para componente principal
+  - [x] Recuperar URL no Styled Compoents e colocar no `background: url()`
+  - [x] Exibir descrição da imagem
+    - [x] Criar função para converter descrição para title case
 - [ ] Encontrar API para buscar de frases
