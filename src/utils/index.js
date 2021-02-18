@@ -44,3 +44,10 @@ export function getGeographicCoordinates() {
     })
   })
 }
+
+export function sentenceToTitleCase(sentence) {
+  return sentence
+    .split('')
+    .map((letter, index) => index === 0 ? letter.toUpperCase() : letter)
+    .join('')
+}

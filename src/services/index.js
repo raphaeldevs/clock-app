@@ -21,3 +21,27 @@ export async function getClimate() {
     iconCode: icon.replace(/[^0-9]/g, '')
   }
 }
+
+export async function getRandomImage() {
+  const { REACT_APP_UNSPLASH_API_KEY: API_KEY } = process.env
+
+  const apiRequest = await fetch(
+    `https://api.unsplash.com/photos/random?orientation=landscape&client_id=${API_KEY}`
+  )
+
+  const apiResponse = await apiRequest.json()
+
+  console.log("apiResponse", apiResponse)
+
+  const {
+    urls: { full: imageUrl },
+    alt_description,
+  } = apiResponse
+
+  const description = alt_description || "An amazing image description..."
+
+  return {
+    imageUrl,
+    description
+  }
+}

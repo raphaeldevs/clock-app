@@ -13,8 +13,8 @@ export const Container = styled.div`
 
   padding: 5% 7%;
 
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('https://images.unsplash.com/photo-1534269222346-5a896154c41d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format');
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(${ ({ backgroundImage }) => backgroundImage });
 
   background-size: cover;
 

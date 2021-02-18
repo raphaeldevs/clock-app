@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+
 import { FiInfo } from 'react-icons/fi'
 
 import Quote from '../../components/Quote'
@@ -5,13 +7,24 @@ import Climate from '../../components/Climate'
 import HelloMessage from '../../components/HelloMessage'
 import Time from '../../components/Time'
 
-import { getYearDay } from '../../utils'
+import { getYearDay, sentenceToTitleCase } from '../../utils'
+import { getRandomImage } from '../../services'
 
 import { Container, Days, Main, Info } from './styles'
 
 function Home() {
+  const [backgroundImage, setBackgroundImage] = useState({ description: "loading..." })
+
+  useEffect(() => {
+    const getAndSetBackgroundImage = async () => {
+      setBackgroundImage(await getRandomImage())
+    }
+
+    getAndSetBackgroundImage()
+  }, [])
+
   return (
-    <Container>
+    <Container backgroundImage={backgroundImage?.imageUrl}>
       <Quote />
 
       <Climate />
@@ -23,7 +36,7 @@ function Home() {
 
         <Info>
           <FiInfo size="2.2rem" />
-          Tall trees with dried leaves on ground
+          { sentenceToTitleCase(backgroundImage.description) }
         </Info>
       </Main>
 
