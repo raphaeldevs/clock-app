@@ -16,6 +16,11 @@ uma extensão para Chrome que muda o jeito como você vê novas abas do navegado
 A principal motivação foi customizar as novas abas do meu navegador, então conheci o <a href="https://momentumdash.com/">Momentum Dashboard</a>
 e me baseei nele para fazer a minha versão.
 
+### ⚙️ Tecnologias
+- ReactJS
+- Styled Components
+- Fetch API
+
 ### 🛠 Funcionalidades
 
 - [x] Exibir hora no formato 24h
