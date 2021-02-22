@@ -1,31 +1,27 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import { TimeView } from './styles'
 
 import { getTime } from '../../utils'
 
 export default function Time() {
-	const [time, setTime] = useState(getTime())
+  const [time, setTime] = useState(getTime())
 
-	const getFormattedTime = () => {
-	  const { hours, minutes } = time
+  const getFormattedTime = () => {
+    const { hours, minutes } = time
 
-	  const formattedHours = hours < 10 
-			? `0${hours}`
-			: hours
+    const formattedHours = hours < 10 ? `0${hours}` : hours
 
-		const formattedMinutes = minutes < 10 
-			? `0${minutes}`
-			: minutes
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes
 
-	  return `${formattedHours}:${formattedMinutes}`
-	}
+    return `${formattedHours}:${formattedMinutes}`
+  }
 
-	setInterval(() => {
-		setTime(getTime())
-	}, 1000)
+  useEffect(() => {
+    setInterval(() => {
+      setTime(getTime())
+    }, 1000)
+  }, [])
 
-	return (
-  	<TimeView>{ getFormattedTime() }</TimeView>
-	)
+  return <TimeView>{getFormattedTime()}</TimeView>
 }
