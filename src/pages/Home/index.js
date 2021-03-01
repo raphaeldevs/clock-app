@@ -13,7 +13,9 @@ import { getRandomImage } from '../../services'
 import { Container, Days, Main, Info } from './styles'
 
 function Home() {
-  const [backgroundImage, setBackgroundImage] = useState({ description: "loading..." })
+  const [backgroundImage, setBackgroundImage] = useState({
+    description: 'loading...'
+  })
 
   useEffect(() => {
     const getAndSetBackgroundImage = async () => {
@@ -36,7 +38,9 @@ function Home() {
 
         <Info>
           <FiInfo size="2.2rem" />
-          { sentenceToTitleCase(backgroundImage.description) }
+          {backgroundImage.altDescription
+            ? sentenceToTitleCase(backgroundImage.altDescription)
+            : 'An amazing image...'}
         </Info>
       </Main>
 

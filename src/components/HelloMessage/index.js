@@ -4,20 +4,20 @@ import { getTimeOfDay } from '../../utils'
 
 import { Container, Icon } from './styles'
 
-export default function HelloMessage() {
-  function TimeOfDayIcon() {
-    const icons = {
-      day: <FiSun />,
-      night: <FiMoon />
-    }
-
-    return <Icon> { icons[getTimeOfDay(true)] } </Icon>
+function TimeOfDayIcon() {
+  const icons = {
+    day: <FiSun />,
+    night: <FiMoon />
   }
 
+  return <Icon> {icons[getTimeOfDay(true)]} </Icon>
+}
+
+export default function HelloMessage() {
   return (
     <Container>
       <TimeOfDayIcon />
-      good { getTimeOfDay() }, raphael devs
+      good {getTimeOfDay()}, raphael devs
     </Container>
   )
 }

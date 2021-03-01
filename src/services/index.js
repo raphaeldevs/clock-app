@@ -31,17 +31,13 @@ export async function getRandomImage() {
 
   const apiResponse = await apiRequest.json()
 
-  console.log("apiResponse", apiResponse)
-
   const {
     urls: { full: imageUrl },
-    alt_description,
+    alt_description: altDescription
   } = apiResponse
-
-  const description = alt_description || "An amazing image description..."
 
   return {
     imageUrl,
-    description
+    altDescription
   }
 }
