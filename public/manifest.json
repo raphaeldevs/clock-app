@@ -1,0 +1,10 @@
+{
+  "name": "my-clock-app",
+  "description": "My NewTab Extension with year day, climate, quotes and time",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["geolocation"],
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  }
+}
