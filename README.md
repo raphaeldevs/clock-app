@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img src="screenshot.png" />
+  <img src="screenshot.webp" />
 </p>
 
 ## 🖥 Projeto
