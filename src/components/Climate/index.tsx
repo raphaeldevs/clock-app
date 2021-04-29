@@ -19,9 +19,14 @@ import { getClimate } from '../../services'
 
 import { Container, Icon } from './styles'
 
-function ClimateIcon({ timeOfDay, climateIconCode }) {
+export default function Climate() {
+  const [temperature, setTemperature] = useState(0)
+  const [climateIconCode, setClimateIconCode] = useState('01')
+  const [timeOfDay] = useState(getTimeOfDay(true))
+
   const isDay = timeOfDay === 'day'
-  const switchIcons = {
+
+  const icons = {
     '01': isDay ? <WiDaySunny /> : <WiNightClear />,
     '02': <WiDayCloudy />,
     '03': <WiCloud />,
@@ -32,14 +37,6 @@ function ClimateIcon({ timeOfDay, climateIconCode }) {
     '13': <WiSnow />,
     '50': <WiFog />
   }
-
-  return <Icon> {switchIcons[climateIconCode]} </Icon>
-}
-
-export default function Climate() {
-  const [temperature, setTemperature] = useState(0)
-  const [climateIconCode, setClimateIconCode] = useState('01')
-  const [timeOfDay] = useState(getTimeOfDay(true))
 
   useEffect(() => {
     const setTemperatureAndClimateIconCode = async () => {
@@ -54,7 +51,7 @@ export default function Climate() {
 
   return (
     <Container>
-      <ClimateIcon climateIconCode={climateIconCode} timeOfDay={timeOfDay} />
+      <Icon> {icons[climateIconCode as keyof typeof icons]} </Icon>
       <strong>{temperature}°</strong>
     </Container>
   )
