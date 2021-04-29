@@ -18,9 +18,11 @@ export default function Time() {
   }
 
   useEffect(() => {
-    setInterval(() => {
+    const intervalID = setInterval(() => {
       setTime(getTime())
     }, 1000)
+
+    return () => clearInterval(intervalID)
   }, [])
 
   return <TimeView>{getFormattedTime()}</TimeView>
