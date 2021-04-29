@@ -9,7 +9,7 @@ export function getYearDay() {
   const currentDate = new Date()
   const yearStartDate = new Date(currentDate.getFullYear(), 0, 0)
 
-  const yearDayDate = currentDate - yearStartDate
+  const yearDayDate = Number(currentDate) - Number(yearStartDate)
 
   const oneDayInMilliseconds = 24 * 60 * 60 * 1000
 
@@ -18,7 +18,7 @@ export function getYearDay() {
   return dayOfYear
 }
 
-export function getTimeOfDay(onlyDayOrNight) {
+export function getTimeOfDay(onlyDayOrNight = false) {
   const { hours } = getTime()
 
   const timeSwitch = () => {
@@ -35,7 +35,10 @@ export function getTimeOfDay(onlyDayOrNight) {
   return onlyDayOrNight ? dayOrNight() : timeSwitch()
 }
 
-export function getGeographicCoordinates() {
+export function getGeographicCoordinates(): Promise<{
+  latitude: number
+  longitude: number
+}> {
   return new Promise(resolve => {
     navigator.geolocation.getCurrentPosition(position => {
       const { latitude, longitude } = position.coords
@@ -45,9 +48,9 @@ export function getGeographicCoordinates() {
   })
 }
 
-export function sentenceToTitleCase(sentence) {
+export function sentenceToTitleCase(sentence: string) {
   return sentence
     .split('')
-    .map((letter, index) => index === 0 ? letter.toUpperCase() : letter)
+    .map((letter, index) => (index === 0 ? letter.toUpperCase() : letter))
     .join('')
 }
