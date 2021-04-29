@@ -1,19 +1,21 @@
 export function getTime() {
+  const currentTime = new Date()
+
   return {
-    hours: new Date().getHours(),
-    minutes: new Date().getMinutes()
+    hours: currentTime.getHours(),
+    minutes: currentTime.getMinutes()
   }
 }
 
 export function getYearDay() {
   const currentDate = new Date()
-  const yearStartDate = new Date(currentDate.getFullYear(), 0, 0)
+  const yearStartDate = new Date(currentDate.getFullYear(), 0, 1)
 
   const yearDayDate = Number(currentDate) - Number(yearStartDate)
 
-  const oneDayInMilliseconds = 24 * 60 * 60 * 1000
+  const ONE_DAY_IN_MILLISECONDS = 24 * 60 * 60 * 1000
 
-  const dayOfYear = Math.floor(yearDayDate / oneDayInMilliseconds)
+  const dayOfYear = Math.floor(yearDayDate / ONE_DAY_IN_MILLISECONDS)
 
   return dayOfYear
 }
@@ -49,8 +51,5 @@ export function getGeographicCoordinates(): Promise<{
 }
 
 export function sentenceToTitleCase(sentence: string) {
-  return sentence
-    .split('')
-    .map((letter, index) => (index === 0 ? letter.toUpperCase() : letter))
-    .join('')
+  return sentence.replace(/\w/, match => match.toUpperCase())
 }
