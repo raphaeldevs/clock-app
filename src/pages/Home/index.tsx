@@ -14,7 +14,8 @@ import { Container, Days, Main, Info } from './styles'
 
 function Home() {
   const [backgroundImage, setBackgroundImage] = useState({
-    description: 'loading...'
+    altDescription: 'Loading...',
+    imageUrl: ''
   })
 
   useEffect(() => {
