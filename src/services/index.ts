@@ -1,6 +1,9 @@
 import { getGeographicCoordinates } from '../utils'
 
-export async function getClimate() {
+export async function getClimate(): Promise<{
+  temperature: number
+  iconCode: string
+}> {
   const { REACT_APP_OWM_API_KEY: API_KEY } = process.env
 
   const { latitude, longitude } = await getGeographicCoordinates()
@@ -22,7 +25,10 @@ export async function getClimate() {
   }
 }
 
-export async function getRandomImage() {
+export async function getRandomImage(): Promise<{
+  imageUrl: string
+  altDescription: string
+}> {
   const { REACT_APP_UNSPLASH_API_KEY: API_KEY } = process.env
 
   const apiRequest = await fetch(
