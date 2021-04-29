@@ -26,12 +26,13 @@ export function getTimeOfDay(onlyDayOrNight = false) {
   const timeSwitch = () => {
     if (hours >= 5 && hours < 12) return 'morning'
     if (hours >= 12 && hours < 18) return 'afternoon'
-    if (hours >= 18 || hours < 5) return 'night'
+    
+    return 'night'
   }
 
   const dayOrNight = () => {
     if (hours >= 5 && hours < 18) return 'day'
-    if (hours >= 18 || hours < 5) return 'night'
+    return 'night'
   }
 
   return onlyDayOrNight ? dayOrNight() : timeSwitch()
