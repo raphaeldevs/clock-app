@@ -6,7 +6,7 @@ export async function getClimate() {
   const { latitude, longitude } = await getGeographicCoordinates()
 
   const apiRequest = await fetch(
-    `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`
+    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`
   )
 
   const apiResponse = await apiRequest.json()
@@ -17,7 +17,7 @@ export async function getClimate() {
   } = apiResponse
 
   return {
-    temperature: temp,
+    temperature: parseInt(temp),
     iconCode: icon.replace(/[^0-9]/g, '')
   }
 }
