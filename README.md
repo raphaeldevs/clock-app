@@ -13,8 +13,8 @@ uma extensão para Chrome que muda o jeito como você vê novas abas do navegado
 
 ## 💡 Motivação
 
-A principal motivação foi customizar as novas abas do meu navegador, então conheci o <a href="https://momentumdash.com/">Momentum Dashboard</a>
-e me baseei nele para fazer a minha versão.
+A principal motivação foi estudar ReactJS, então conheci o <a href="https://momentumdash.com/">Momentum Dashboard</a>
+e me baseei nele para fazer a minha versão com essa tecnologia.
 
 ## ⚙️ Tecnologias
 - ReactJS
