@@ -27,12 +27,12 @@ export function getTimeOfDay(onlyDayOrNight) {
     if (hours >= 18 || hours < 5) return 'night'
   }
 
-  const dayOrNight = () => {
+  const dayOrNightSwitch = () => {
     if (hours >= 5 && hours < 18) return 'day'
     if (hours >= 18 || hours < 5) return 'night'
   }
 
-  return onlyDayOrNight ? dayOrNight() : timeSwitch()
+  return onlyDayOrNight ? dayOrNightSwitch() : timeSwitch()
 }
 
 export function getGeographicCoordinates() {
@@ -48,6 +48,6 @@ export function getGeographicCoordinates() {
 export function sentenceToTitleCase(sentence) {
   return sentence
     .split('')
-    .map((letter, index) => index === 0 ? letter.toUpperCase() : letter)
+    .map((letter, index) => (index === 0 ? letter.toUpperCase() : letter))
     .join('')
 }
